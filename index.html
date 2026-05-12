@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>华泽天纪资料库</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>华泽天纪资料库</h1>
+      <p>易经六十四卦 · 紫微斗数学习盘 · 八字四柱 · 阳宅资料索引</p>
+    </div>
+    <nav>
+      <a href="#yijing">查卦</a>
+      <a href="#chart">排盘</a>
+      <a href="#yangzhai">阳宅</a>
+      <a href="#sources">资料</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">传统文化学习工具</p>
+        <h2>输入卦名、出生信息或空间场景，快速找到对应资料。</h2>
+        <p class="hero-text">本工具用于短视频选题、文案查资料、易经/紫微/阳宅学习整理。结果仅作传统文化学习参考，不作绝对预测。</p>
+      </div>
+      <div class="hero-card">
+        <strong>推荐用法</strong>
+        <span>查卦：输入“乾”“家人”“蹇”</span>
+        <span>排盘：输入出生年月日时</span>
+        <span>阳宅：点办公桌、卧室、财位</span>
+      </div>
+    </section>
+
+    <section id="yijing" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">易经查询</p>
+          <h2>六十四卦速查</h2>
+        </div>
+        <input id="hexSearch" class="search" placeholder="输入卦名、关键词，例如：乾、家人、事业、感情">
+      </div>
+      <div id="hexResult" class="hex-result"></div>
+      <div id="hexGrid" class="hex-grid"></div>
+    </section>
+
+    <section id="chart" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">排盘工具</p>
+          <h2>八字四柱 + 紫微学习盘</h2>
+        </div>
+        <span class="badge">学习版</span>
+      </div>
+
+      <div class="form-grid">
+        <label>出生日期
+          <input id="birthDate" type="date">
+        </label>
+        <label>出生时间
+          <input id="birthTime" type="time" value="12:00">
+        </label>
+        <label>性别
+          <select id="gender">
+            <option value="male">男</option>
+            <option value="female">女</option>
+          </select>
+        </label>
+        <label>出生地/当前位置
+          <input id="location" placeholder="例如：上海、广州、北京">
+        </label>
+        <label>农历月（紫微用）
+          <select id="lunarMonth"></select>
+        </label>
+        <label>农历日（紫微用）
+          <select id="lunarDay"></select>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="calcBtn">生成八字与命盘</button>
+        <button id="clearBtn" class="ghost">清空</button>
+      </div>
+
+      <div class="chart-layout">
+        <div class="result-card">
+          <h3>八字四柱</h3>
+          <div id="baziResult" class="pillars empty">等待输入</div>
+          <p class="note">四柱按公历和节气近似法生成，适合做内容学习与初筛；严肃排盘需用专业万年历校正。</p>
+        </div>
+        <div class="result-card">
+          <h3>紫微学习盘</h3>
+          <div id="ziweiMeta" class="meta-list"></div>
+          <div id="palaceGrid" class="palace-grid"></div>
+          <p class="note">这里先定位命宫、身宫和十二宫学习框架，不等于完整星曜排盘。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="yangzhai" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">阳宅资料</p>
+          <h2>生活场景快速选题</h2>
+        </div>
+      </div>
+      <div class="topic-grid" id="yangzhaiTopics"></div>
+    </section>
+
+    <section id="sources" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">本地资料</p>
+          <h2>Skill 与资料入口</h2>
+        </div>
+      </div>
+      <div class="source-grid">
+        <article>
+          <h3>人间道</h3>
+          <p>六十四卦、人事义理、处世、事业、关系、进退。</p>
+          <code>nihaixia-tianji-renjian-dao</code>
+        </article>
+        <article>
+          <h3>地脉道</h3>
+          <p>阳宅、方位、家庭成员、办公桌、卧室、风水形势。</p>
+          <code>nihaixia-tianji-dimai-dao</code>
+        </article>
+        <article>
+          <h3>天机道</h3>
+          <p>紫微斗数、四柱、易经推命、铁版神数、皇极经世。</p>
+          <code>nihaixia-tianji-tianji-dao</code>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>华泽天纪资料库。传统文化学习参考，不作医疗、法律、投资、婚姻等现实决策依据。</p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
